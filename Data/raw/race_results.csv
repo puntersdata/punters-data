@@ -1,1 +1,6 @@
-
+Horse,Track,Distance,Barrier,Recent_Form,Jockey_Rating,Trainer_Rating,Finish,Starting_Odds
+Horse A,Flemington,1200,3,85,80,75,1,4.50
+Horse B,Flemington,1200,7,70,75,80,3,6.00
+Horse C,Flemington,1200,1,65,70,70,5,8.00
+Horse D,Flemington,1200,5,90,85,90,2,3.50
+Horse E,Flemington,1200,9,60,65,60,6,12.00
