@@ -1,16 +1,25 @@
 # Punters Data - First Prediction Model
 
+import csv
+
 print("Punters Data prediction engine started")
 
-horse = "Example Horse"
+with open("../../Data/raw/race_results.csv") as file:
+    races = csv.DictReader(file)
 
-rating = 82
+    for horse in races:
 
-probability = rating / 100
+        rating = (
+            float(horse["Recent_Form"]) * 0.5 +
+            float(horse["Jockey_Rating"]) * 0.25 +
+            float(horse["Trainer_Rating"]) * 0.25
+        )
 
-true_odds = 1 / probability
+        probability = rating / 100
+        true_odds = 1 / probability
 
-print("Horse:", horse)
-print("Rating:", rating)
-print("Probability:", probability * 100, "%")
-print("True Odds: $", round(true_odds, 2))
+        print("----------------")
+        print("Horse:", horse["Horse"])
+        print("Rating:", round(rating,2))
+        print("Probability:", round(probability*100,2), "%")
+        print("True Odds: $", round(true_odds,2))
